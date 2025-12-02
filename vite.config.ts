@@ -19,6 +19,8 @@ export default defineConfig({
         ]
       : []),
   ],
+  // ADDED: This is required for GitHub Pages to serve assets correctly
+  base: "/lumin8website/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -28,6 +30,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
+    // PRESERVED: Keeping your existing output path to avoid breaking local server
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
